@@ -1,0 +1,68 @@
+.nav-icon--lower.active-link {
+  position: relative;
+}
+
+.nav-icon--lower.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: 3px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 30%;
+  height: 2px;
+  background: #7C67BB;
+background: linear-gradient(90deg,rgba(124, 103, 187, 1) 50%, rgba(99, 180, 152, 1) 100%);
+  transition: width 0.3s;
+  border-radius: 10px;
+}
+
+.p-sidebar{
+    font-size: 10px;
+   background: linear-gradient(90deg,rgba(124, 103, 187, 1) 20%, rgba(99, 180, 152, 1) 97%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.title-color {
+  display: inline-block;
+  background: linear-gradient(90deg,rgba(124, 103, 187, 1) 5%, rgba(99, 180, 152, 1) 37%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 300;
+}
+
+.bgTop {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.bgBottom {
+  position: absolute;
+  z-index: -1;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+
+
+.elipseLight{
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: -1;
+}
+
+.elipseColor{
+    position: absolute;
+    top:350px
+    
+}

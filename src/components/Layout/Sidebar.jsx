@@ -1,0 +1,57 @@
+import { Nav, Image } from "react-bootstrap";
+import { Link, useLocation } from "react-router";
+import home from "../../assets/image/home.svg"
+import freezer from "../../assets/image/freezer.svg"
+import shop from "../../assets/image/shop.svg"
+import game from "../../assets/image/champion.svg";
+
+const Sidebar = () => {
+      const location = useLocation();
+      const currentPath = location.pathname;
+
+      const isActive = (path) => currentPath === path;
+
+  return (
+    <>
+      <Nav
+        fill
+        className="position-fixed bottom-0 d-lg-none bg-transparent mb-2 "
+        style={{
+          left: "5px",
+          right: "5px",
+          background: "linear-gradient(white, white) padding-box, linear-gradient(90deg, rgba(124, 103, 187, 1) 50%, rgba(99, 180, 152, 1) 100%) border-box",
+          borderRadius: "16px",
+          border: "2px solid transparent",
+          boxSizing: "border-box",
+        }}
+      >
+        <Nav.Item>
+          <Nav.Link className={`nav-icon--lower ${isActive("/") ? "active-link" : ""}`} as={Link} to="/">
+            <Image src={home} alt="Logo home"></Image>
+            <p className="p-sidebar">Home</p>
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link className={`nav-icon--lower ${isActive("/frigoPage") ? "active-link" : ""}`} as={Link} to="/frigoPage">
+            <Image src={freezer} alt="logo frigo"></Image>
+            <p className="p-sidebar">Frigo</p>
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link className={`nav-icon--lower ${isActive("/shopPage") ? "active-link" : ""}`} as={Link} to="/shopPage">
+            <Image src={shop} alt="logo shop"></Image>
+            <p className="p-sidebar">Shop</p>
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link className={`nav-icon--lower ${isActive("/gamePage") ? "active-link" : ""}`} as={Link} to="/gamePage">
+            <Image src={game} alt="logo game"></Image>
+            <p className="p-sidebar">Game</p>
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+    </>
+  );
+};
+
+export default Sidebar;
