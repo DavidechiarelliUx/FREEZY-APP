@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router";
 import home from "../../assets/image/home.svg"
 import freezer from "../../assets/image/freezer.svg"
 import shop from "../../assets/image/shop.svg"
-import game from "../../assets/image/champion.svg";
+import recipe from "../../assets/listIcon/recipe.svg";
 
 const Sidebar = () => {
       const location = useLocation();
@@ -37,6 +37,10 @@ const Sidebar = () => {
             <p className="p-sidebar">Frigo</p>
           </Nav.Link>
         </Nav.Item>
+          <Nav.Link className={`nav-icon--lower ${isActive("/recipePage") ? "active-link" : ""}`} as={Link} to="/recipePage">
+            <Image src={recipe} alt="logo game"></Image>
+            <p className="p-sidebar">Ricette</p>
+          </Nav.Link>
         <Nav.Item>
           <Nav.Link className={`nav-icon--lower ${isActive("/shopPage") ? "active-link" : ""}`} as={Link} to="/shopPage">
             <Image src={shop} alt="logo shop"></Image>
@@ -44,10 +48,6 @@ const Sidebar = () => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className={`nav-icon--lower ${isActive("/gamePage") ? "active-link" : ""}`} as={Link} to="/gamePage">
-            <Image src={game} alt="logo game"></Image>
-            <p className="p-sidebar">Game</p>
-          </Nav.Link>
         </Nav.Item>
       </Nav>
     </>

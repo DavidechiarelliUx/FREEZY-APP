@@ -3,6 +3,7 @@ import carneImage from "../../../assets/listIcon/carne.svg";
 import fruttaImage from "../../../assets/listIcon/frutta.svg";
 import formaggiImage from "../../../assets/listIcon/formaggi.svg";
 import pestoImage from "../../../assets/listIcon/pesto.svg";
+import fish from "../../../assets/listIcon/fish.svg";
 
 const listCardNameProductFrigo = [
   {
@@ -34,6 +35,12 @@ const listCardNameProductFrigo = [
     name: "Scatoletta",
     image: pestoImage,
     bgColor: "#CCF870",
+  },
+  {
+    id: 6,
+    name: "Pesce",
+    image: fish,
+    bgColor: "#5FCCC7",
   },
 ];
 
