@@ -8,12 +8,13 @@ Notifiche visive per i prodotti in scadenza
 
 Suggerimento di ricette basate sugli alimenti in scadenza
 
-E-commerce integrato per l'acquisto dei prodotti mancanti
-
-Gamification con badge, progressi e crescita di un albero virtuale
+lista di tutte le ricette salvate nel back-end 
 
 Modalità admin per la gestione delle ricette e degli alimenti
 
 (Opzionale) Mini-gioco educativo sullo spreco alimentare
 
 🚀 Progetto sviluppato come progetto finale del corso Epicode Full Stack Developer.# FREEZY-APP
+
+
+link progetto back-end : https://github.com/DavidechiarelliUx/freezy-be

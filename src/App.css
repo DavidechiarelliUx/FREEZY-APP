@@ -77,10 +77,11 @@ background: linear-gradient(90deg,rgba(124, 103, 187, 1) 50%, rgba(99, 180, 152,
   display: flex;
   overflow-x: auto;
   padding-bottom: 10px;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 .scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
+
