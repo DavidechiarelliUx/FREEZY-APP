@@ -33,7 +33,9 @@ background: linear-gradient(90deg,rgba(124, 103, 187, 1) 50%, rgba(99, 180, 152,
   background-clip: text;
   font-weight: 300;
 }
-
+.bg-color {
+  background: linear-gradient(90deg,rgba(124, 103, 187, 1) 5%, rgba(99, 180, 152, 1) 70%);
+}
 .bgTop {
   position: absolute;
   z-index: -1;

@@ -11,6 +11,7 @@ export const fetchFridgeProduct = (productData) => {
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
       },
       body: JSON.stringify(productData),
     })
@@ -23,7 +24,7 @@ export const fetchFridgeProduct = (productData) => {
       })
       .then((data) => {
         dispatch({ type: ADD_FRIDGE_PRODUCT_SUCCESS, payload: data });
-        return data; 
+        return data;
       })
       .catch((error) => {
         dispatch({ type: ADD_FRIDGE_PRODUCT_FALSE, payload: error.message });
@@ -40,13 +41,17 @@ export const getFridgeProducts = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_FRIDGE_PRODUCTS_REQUEST });
 
-    return fetch("http://localhost:8082/api/fridgeProducts?page=0&size=100")
+    fetch("http://localhost:8082/api/fridgeProducts/owner", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
       .then((res) => {
         if (!res.ok) throw new Error("Errore nel recupero dei prodotti");
         return res.json();
       })
       .then((data) => {
-        dispatch({ type: FETCH_FRIDGE_PRODUCTS_SUCCESS, payload: data.content });
+        dispatch({ type: FETCH_FRIDGE_PRODUCTS_SUCCESS, payload: data });
       })
       .catch((err) => {
         dispatch({ type: FETCH_FRIDGE_PRODUCTS_FAILURE, payload: err.message });
@@ -63,15 +68,26 @@ export const deleteFridgeProduct = (productId) => {
   return (dispatch) => {
     dispatch({ type: DELETE_FRIDGE_PRODUCT_REQUEST });
 
-    return fetch(`http://localhost:8082/api/fridgeProducts/${productId}`, {
-      method: "DELETE",
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error("Errore nella cancellazione del prodotto");
-        dispatch({ type: DELETE_FRIDGE_PRODUCT_SUCCESS, payload: productId });
-      })
-      .catch((err) => {
-        dispatch({ type: DELETE_FRIDGE_PRODUCT_FAILURE, payload: err.message });
-      });
+   return fetch(`http://localhost:8082/api/fridgeProducts/${productId}`, {
+     method: "DELETE",
+     headers: {
+       Authorization: "Bearer " + localStorage.getItem("token"),
+     },
+   })
+     .then((res) => {
+       if (!res.ok) throw new Error("Errore nella cancellazione del prodotto");
+       dispatch({ type: DELETE_FRIDGE_PRODUCT_SUCCESS, payload: productId });
+     })
+     .catch((err) => {
+       dispatch({ type: DELETE_FRIDGE_PRODUCT_FAILURE, payload: err.message });
+     });
   };
 };
+
+
+export const RESET_FRIDGE_PRODUCTS = "RESET_FRIDGE_PRODUCTS";
+
+export const resetFridgeProducts = () => {
+  return { type: RESET_FRIDGE_PRODUCTS };
+};
+

@@ -8,6 +8,7 @@ import {
   DELETE_FRIDGE_PRODUCT_SUCCESS,
   DELETE_FRIDGE_PRODUCT_REQUEST,
   DELETE_FRIDGE_PRODUCT_FAILURE,
+  RESET_FRIDGE_PRODUCTS
 } from "../action/fridgeProductActions";
 
 const initialState = {
@@ -52,7 +53,12 @@ const fridgeProductReducer = (state = initialState, action) => {
 
     case DELETE_FRIDGE_PRODUCT_REQUEST:
       return { ...state, loading: true };
-      
+    case RESET_FRIDGE_PRODUCTS:
+      return {
+        ...state,
+        products: [],
+      };
+
     default:
       return state;
   }

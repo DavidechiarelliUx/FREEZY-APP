@@ -23,10 +23,11 @@ const Sidebar = () => {
           borderRadius: "16px",
           border: "2px solid transparent",
           boxSizing: "border-box",
+          zIndex:"1"
         }}
       >
         <Nav.Item>
-          <Nav.Link className={`nav-icon--lower ${isActive("/") ? "active-link" : ""}`} as={Link} to="/">
+          <Nav.Link className={`nav-icon--lower ${isActive("/homepage") ? "active-link" : ""}`} as={Link} to="/homepage">
             <Image src={home} alt="Logo home"></Image>
             <p className="p-sidebar">Home</p>
           </Nav.Link>
