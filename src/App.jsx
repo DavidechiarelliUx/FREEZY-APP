@@ -15,6 +15,8 @@ import ProductTemplateManager from './components/Admin/ProductTemplateManager';
 import RecipeManager from './components/Admin/RecipeManager';
 import FormProductTemplate from './components/Admin/FormProductTemplate';
 import FormRecipe from './components/Admin/FormRecipe';
+import LandingPage from './components/Layout/LandingPage';
+import ContactPage from './components/Layout/ContactPage';
 
 function App() {
 
@@ -23,8 +25,10 @@ function App() {
       <Routes>
         {/* Pagine pubbliche senza TopBar / Sidebar */}
         <Route element={<AuthLayout />}>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/contactPage" element={<ContactPage/>}/>
         </Route>
 
         {/* Pagine protette con layout + controllo token */}

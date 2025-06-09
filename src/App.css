@@ -1,3 +1,5 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
 .nav-icon--lower.active-link {
   position: relative;
 }
@@ -85,3 +87,62 @@ background: linear-gradient(90deg,rgba(124, 103, 187, 1) 50%, rgba(99, 180, 152,
   display: none; 
 }
 
+
+
+.landing-bg {
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.logo-landing {
+  max-width: 180px;
+  animation: zoomIn 1s ease;
+}
+
+.login-img {
+  max-height: 280px;
+}
+
+.title-color {
+  color: #4c6f1e;
+}
+
+.bg-color {
+  background-color: #abc631;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+.contact-bg {
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-link {
+  color: #444;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #5d8233;
+  border-bottom: 1px solid #5d8233;
+}

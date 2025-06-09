@@ -17,7 +17,7 @@ function TopBar() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     dispatch(resetFridgeProducts());
-    navigate("/");
+    navigate("/login");
   };
   return (
     <Navbar expand="lg">
@@ -39,6 +39,9 @@ function TopBar() {
             </Nav.Link>
             <Nav.Link as={Link} to="/shopPage">
               Shop
+            </Nav.Link>
+            <Nav.Link as={Link} to="/contactPage">
+              Contattami
             </Nav.Link>
 
             <Nav.Link onClick={handleLogout}>Logout</Nav.Link>

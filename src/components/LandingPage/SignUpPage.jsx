@@ -35,7 +35,7 @@ const SignUpPage = () => {
           throw new Error(responseBody || "Registrazione fallita");
         }
         alert("Registrazione avvenuta con successo!");
-        navigate("/");
+        navigate("/login");
       })
       .catch((error) => {
         console.error("Errore registrazione:", error);
@@ -80,7 +80,7 @@ const SignUpPage = () => {
 
         <div className="text-center mt-3">
           <span>Hai già un account?</span>{" "}
-          <Button variant="link" onClick={() => navigate("/")} style={{ textDecoration: "none", fontWeight: "500" }} className="title-color">
+          <Button variant="link" onClick={() => navigate("/login")} style={{ textDecoration: "none", fontWeight: "500" }} className="title-color">
             Torna al Login
           </Button>
         </div>

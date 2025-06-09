@@ -1,20 +1,54 @@
-🌱 Freezy - L'app contro lo spreco alimentare
-Freezy è un'applicazione full stack sviluppata con React, React Router DOM, Bootstrap, Java (Spring Boot) e PostgreSQL, progettata per aiutare le persone a monitorare e gestire i prodotti nel frigorifero, evitando sprechi alimentari.
+# 🌱 Freezy - L'app contro lo spreco alimentare
 
-🎯 Funzionalità principali:
-Aggiunta dei prodotti in frigo con data di scadenza
+**Freezy** è un'applicazione **full stack** sviluppata come progetto finale del corso *Epicode Full Stack Developer*, con l'obiettivo di **ridurre lo spreco alimentare** attraverso una gestione intelligente degli alimenti presenti nel frigorifero.
 
-Notifiche visive per i prodotti in scadenza
+---
 
-Suggerimento di ricette basate sugli alimenti in scadenza
+## 🎯 Funzionalità principali
 
-lista di tutte le ricette salvate nel back-end 
+- ✅ Aggiunta dei prodotti in frigo con data di scadenza
+- 🔔 Notifiche visive per i prodotti in scadenza
+- 🍽️ Suggerimento di ricette in base agli ingredienti disponibili
+- 📚 Visualizzazione della lista completa delle ricette salvate nel database
+- 🧑‍💼 Area Admin per:
+  - Creazione / modifica / eliminazione di alimenti
+  - Gestione delle ricette (incluse immagini, preparazione, allergeni)
+- 🎮 Mini-gioco educativo (opzionale) per sensibilizzare sul tema dello spreco
+- 📅 Visualizzazione ordinata delle ricette suggerite e dei prodotti in ordine di scadenza
 
-Modalità admin per la gestione delle ricette e degli alimenti
+---
 
-(Opzionale) Mini-gioco educativo sullo spreco alimentare
+## 🔐 Autenticazione e Accesso
 
-🚀 Progetto sviluppato come progetto finale del corso Epicode Full Stack Developer.# FREEZY-APP
+> ⚠️ **Importante:** Per accedere all'applicazione è **obbligatorio registrarsi**.
 
+Le rotte sono **protette da autenticazione JWT**, quindi:
+- Al primo accesso crea un utente tramite la pagina di registrazione
+- Accedi con le tue credenziali per navigare tra le sezioni utente
+- Solo gli utenti con ruolo `ADMIN` possono accedere alla sezione Admin
 
-link progetto back-end : https://github.com/DavidechiarelliUx/freezy-be
+---
+
+## 💻 Stack Tecnologico
+
+### Frontend
+- ⚛️ React
+- 📦 Redux Toolkit
+- 🚦 React Router DOM
+- 💅 Bootstrap & React-Bootstrap
+
+### Backend
+- ☕ Java + Spring Boot
+- 🔐 JWT Authentication
+- 🧭 Swagger API Docs
+- 📸 Upload immagini su Cloudinary
+- 🗄️ PostgreSQL
+
+---
+
+## 🔧 Come eseguire il progetto
+
+### 1. Clona il repository
+
+```bash
+git clone https://github.com/DavidechiarelliUx/freezy-be
