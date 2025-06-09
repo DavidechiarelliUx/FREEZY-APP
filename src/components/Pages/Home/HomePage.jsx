@@ -93,7 +93,7 @@ useEffect(() => {
         <CardRicette />
       </Container>
 
-      <Image className="bgBottom" src={bgBottom} />
+      <Image className="bgBottom d-lg-none"  src={bgBottom} />
 
       <Modal key="welcome-modal" show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header closeButton>

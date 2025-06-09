@@ -2,6 +2,7 @@ import { Outlet} from "react-router-dom";
 import TopBar from "./TopBar";
 import Sidebar from "./Sidebar";
 import SidebarAdmin from "./SidebarAdmin";
+import TopBarAdmin from "./TopBarAdmin";
 
 
 const MainLayout = () => {
@@ -9,7 +10,7 @@ const ruolo = localStorage.getItem("ruolo");
 const isAdmin = ruolo === "ADMIN";
   return (
     <>
-      <TopBar />
+      {isAdmin ? <TopBarAdmin /> : <TopBar />}
       {isAdmin ? <SidebarAdmin /> : <Sidebar />}
       <Outlet />
     </>

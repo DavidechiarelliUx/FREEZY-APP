@@ -3,14 +3,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
-import logoLight from "../../assets/image/logo-light.svg"
+import logoLight from "../../assets/image/logo-light.svg";
 import { useDispatch } from "react-redux";
 import { resetFridgeProducts } from "../../redux/action/fridgeProductActions";
 
-
-
-function TopBar() {
-
+function TopBarAdmin() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -40,6 +37,9 @@ function TopBar() {
             <Nav.Link as={Link} to="/shopPage">
               Shop
             </Nav.Link>
+            <Nav.Link as={Link} to="/adminPage">
+              Admin
+            </Nav.Link>
 
             <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
           </Nav>
@@ -49,4 +49,4 @@ function TopBar() {
   );
 }
 
-export default TopBar;
+export default TopBarAdmin;
