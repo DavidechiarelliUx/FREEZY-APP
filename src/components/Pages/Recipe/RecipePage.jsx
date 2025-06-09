@@ -20,6 +20,7 @@ const RecipePage = () => {
     dispatch(fetchRecipe());
   }, [dispatch]);
 
+  
   const allergenIcons = {
     "egg.svg": egg,
     "fish.svg": fish,

@@ -1,16 +1,16 @@
 import { Nav, Image } from "react-bootstrap";
 import { Link, useLocation } from "react-router";
-import home from "../../assets/image/home.svg"
-import freezer from "../../assets/image/freezer.svg"
-import shop from "../../assets/image/shop.svg"
+import home from "../../assets/image/home.svg";
+import freezer from "../../assets/image/freezer.svg";
+import shop from "../../assets/image/shop.svg";
 import recipe from "../../assets/listIcon/recipe.svg";
+import admin from "../../assets/listIcon/admin.svg";
 
+const SidebarAdmin = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
 
-const Sidebar = () => {
-      const location = useLocation();
-      const currentPath = location.pathname;
-
-      const isActive = (path) => currentPath === path;
+  const isActive = (path) => currentPath === path;
 
   return (
     <>
@@ -49,10 +49,15 @@ const Sidebar = () => {
             <p className="p-sidebar">Shop</p>
           </Nav.Link>
         </Nav.Item>
-
+          <Nav.Item>
+            <Nav.Link className={`nav-icon--lower ${isActive("/adminPage") ? "active-link" : ""}`} as={Link} to="/adminPage">
+              <Image src={admin} alt="logo admin"></Image>
+              <p className="p-sidebar">Admin</p>
+            </Nav.Link>
+          </Nav.Item>
       </Nav>
     </>
   );
 };
 
-export default Sidebar;
+export default SidebarAdmin;

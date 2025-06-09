@@ -22,7 +22,7 @@ const CardRicette = () => {
       ...prod,
       scadenza: Math.max(0, Math.floor((new Date(prod.dataScadenza) - new Date()) / (1000 * 60 * 60 * 24))),
     }))
-    .filter((prod) => prod.scadenza <= 10);
+    .filter((prod) => prod.scadenza <= 20);
 
   const ricetteFiltrate = ricette.filter((ricetta) =>
     prodottiInScadenza.some((prodotto) => ricetta.ingredientePrincipale?.toLowerCase().trim() === prodotto.nomeProdotto?.toLowerCase().trim())

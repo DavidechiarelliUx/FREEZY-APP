@@ -10,6 +10,11 @@ import AuthLayout from './components/Layout/AuthLayout';
 import MainLayout from './components/Layout/MainLayout';
 import PrivateRoute from './components/Layout/PrivateRoutes';
 import SignUpPage from './components/LandingPage/SignUpPage';
+import AdminPage from './components/Admin/AdminPage';
+import ProductTemplateManager from './components/Admin/ProductTemplateManager';
+import RecipeManager from './components/Admin/RecipeManager';
+import FormProductTemplate from './components/Admin/FormProductTemplate';
+import FormRecipe from './components/Admin/FormRecipe';
 
 function App() {
 
@@ -30,6 +35,13 @@ function App() {
             <Route path="/shopPage" element={<ShopPage />} />
             <Route path="/recipePage" element={<RecipePage />} />
             <Route path="/productTemplate" element={<ProductTemplate />} />
+            <Route path="/adminPage" element={<AdminPage />} />
+            <Route path="/productManager" element={<ProductTemplateManager />} />
+            <Route path="/recipeManager" element={<RecipeManager />} />
+            <Route path="/form-product-template" element={<FormProductTemplate />} />
+            <Route path="/form-product-template/:id" element={<FormProductTemplate />} />
+            <Route path="/form-recipe" element={<FormRecipe />} />
+            <Route path="/form-recipe/:id" element={<FormRecipe />} />
           </Route>
         </Route>
       </Routes>

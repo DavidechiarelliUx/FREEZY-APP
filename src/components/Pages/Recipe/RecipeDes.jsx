@@ -5,6 +5,7 @@ import gluten from "../../../assets/allergeni/gluten.svg";
 import milk from "../../../assets/allergeni/Milk.svg";
 import peanut from "../../../assets/allergeni/peanut.svg";
 import shrimp from "../../../assets/allergeni/Shrimp.svg";
+import { useSelector } from "react-redux";
 
 
 const RecipeDes = ({ recipe, onClose }) => {
@@ -16,6 +17,9 @@ const RecipeDes = ({ recipe, onClose }) => {
     "peanut.svg": peanut,
     "Shrimp.svg": shrimp,
   };
+  const { template: productTemplates } = useSelector((state) => state.productTemplate);
+
+  
   return (
     <Modal show={true} onHide={onClose} centered>
       <Modal.Header closeButton />
@@ -35,7 +39,7 @@ const RecipeDes = ({ recipe, onClose }) => {
           <h6 className="mt-3">Ingredienti</h6>
           <ul style={{ fontSize: "0.8rem" }}>
             <li>
-              <strong>{recipe.ingredientePrincipale}</strong>
+              <strong>{productTemplates.find((p) => p.id === Number(recipe.ingredientePrincipale))?.name || recipe.ingredientePrincipale}</strong>
             </li>
             {recipe.ingredienti.map((ingrediente, index) => (
               <li key={index}>{ingrediente}</li>

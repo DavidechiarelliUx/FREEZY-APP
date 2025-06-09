@@ -1,14 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 import TopBar from "./TopBar";
 import Sidebar from "./Sidebar";
+import SidebarAdmin from "./SidebarAdmin";
 
 
 const MainLayout = () => {
+const ruolo = localStorage.getItem("ruolo");
+const isAdmin = ruolo === "ADMIN";
   return (
     <>
       <TopBar />
-        <Sidebar />
-          <Outlet />
+      {isAdmin ? <SidebarAdmin /> : <Sidebar />}
+      <Outlet />
     </>
   );
 };
