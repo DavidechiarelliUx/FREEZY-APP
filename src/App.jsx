@@ -23,7 +23,7 @@ function App() {
       <Routes>
         {/* Pagine pubbliche senza TopBar / Sidebar */}
         <Route element={<AuthLayout />}>
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
         </Route>
 

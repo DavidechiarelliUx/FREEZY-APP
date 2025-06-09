@@ -17,7 +17,7 @@ function TopBar() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     dispatch(resetFridgeProducts());
-    navigate("/login");
+    navigate("/");
   };
   return (
     <Navbar expand="lg">

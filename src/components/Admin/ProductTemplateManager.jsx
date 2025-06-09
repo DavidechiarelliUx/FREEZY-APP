@@ -18,7 +18,7 @@ const ProductTemplateManager = () => {
   }, [dispatch]);
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-4" style={{ paddingBottom: "100px" }}>
       <Row className="d-flex justify-content-center align-items-center mb-3">
         <Col xs={1}>
           <Image src={arrowBack} alt="Back" style={{ width: "35px", height: "35px", cursor: "pointer" }} onClick={() => navigate(-1)} />
